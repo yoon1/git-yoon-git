@@ -1,3 +1,4 @@
-# git-yoon-git
+# ***알고리즘 문제 해결*** 
 
-yoon1 : "백준 알고리즘" 사이트의 문제를 풀어보는 저장소 입니다. 
+Language : C++  
+문제 출처 : baekjoon, SWAcademy, Programmers
