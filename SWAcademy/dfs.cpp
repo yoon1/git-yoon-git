@@ -4,7 +4,7 @@
 
 using namespace std;
 
-void main()
+int main()
 {
 	ifstream fin;
 	ofstream fout;
@@ -33,6 +33,7 @@ void main()
 		cout << endl;
 	}
 	fin.close();
+	return 0;
 }
 
 
