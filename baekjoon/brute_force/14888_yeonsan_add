@@ -1,0 +1,68 @@
+#include <iostream>
+#include <algorithm>
+#include <vector>
+
+using namespace std;
+
+int N;
+long long minValue = 1000000000;
+long long maxValue = -1000000000;
+vector<int> nums;
+vector<int> ops;
+
+long long calc(long long a, int b, int op) {
+	switch (op) {
+		case 1 :
+			return a + b;
+		case 2 :
+			return a - b;
+		case 3 :
+			return a * b;
+		case 4 :
+			return a / b;
+		default : 
+			break;
+	}
+	return 0;
+}
+
+void solution() {
+	long long sum = nums[0];
+	for (int i = 0; i < N - 1; i++) 
+		sum = calc(sum, nums[i+1], ops[i]);
+	maxValue = max(maxValue, sum);
+	minValue = min(minValue, sum);
+}
+
+void addOp(char num, int op) {
+	for (int i = 0; i < num; i++)
+		ops.push_back(op);
+}
+
+int main() {
+	long long min = 100000000;
+	long long max = -100000000;
+
+	int add, sub, mul, dev;
+	vector<char> t;
+	cin >> N;
+	for (int i = 0; i < N; i++) {
+		int M;
+		cin >> M;
+		nums.push_back(M);
+	}
+	cin >> add >> sub >> mul >> dev;
+	
+	addOp(add, 1);
+	addOp(sub, 2);
+	addOp(mul, 3);
+	addOp(dev, 4);
+
+	do {
+		solution();
+	} while (next_permutation(ops.begin(), ops.end()));
+
+	cout << maxValue << endl << minValue << endl;
+
+	return 0;
+}
