@@ -1,35 +1,31 @@
-// 시간초과 개선 필요
-
 #include <iostream>
 #include <string>
 #include <vector>
+#include <algorithm>
 
 using namespace std;
 
-bool promising(int M, int x, vector<int> budgets) {
-	for (int i = 0; i < budgets.size(); i++) {
-		int budget = x > budgets[i] ? budgets[i] : x;
-		M = M - budget;
-		if (M < 0)
-			return false;
-	}
-	return true;
-}
 int solution(vector<int> budgets, int M) {
-	int answer = 0;
-	int left = 1;
-	int right = M;
-	int mid = (left + right) / 2;
-	while (left <= right) {
-		mid = (left + right) / 2;
-		if (promising(M, mid, budgets)) {
-			if (answer < mid)
-				answer = mid;
-			left = mid + 1;
-		}
-		else
-			right = mid - 1;
-	}
+	int answer = 0, right  = 100000, left = 1, mid;
+    while( left <= right) {
+        bool flag = true;
+        long long sum = 0;
+        mid = (left + right) / 2;
+        for(int budget : budgets) {
+            if ( budget > mid) {
+                sum += mid;
+                flag = false;
+            }
+            else sum += budget;
+        }
+        if ( sum > M ) right = mid - 1;
+        else {
+            if ( flag ) 
+                return *max_element(budgets.begin(), budgets.end());
+            left = mid + 1;
+            answer = mid;
+        }
+    }
 	return answer;
 }
 
