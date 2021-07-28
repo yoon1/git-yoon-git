@@ -1,4 +1,4 @@
-# *** solving quiz *** 
+# _solving quiz_
 
 ## Language
 - C++
