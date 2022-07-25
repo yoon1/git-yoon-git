@@ -43,5 +43,5 @@ func solution(s string) int {
 }
 
 func main() {
-}
 	log.Println(solution("one4seveneight"))
+}
