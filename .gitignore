@@ -8,3 +8,7 @@ testcode/h.cpp
 testcode/h2.java
 TEST
 */.idea/*
+/.idea/vcs.xml
+/.idea/quiz.algorithm-solve.iml
+/go/main.go
+/.idea/modules.xml
