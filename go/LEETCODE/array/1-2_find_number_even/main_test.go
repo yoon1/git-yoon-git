@@ -5,7 +5,7 @@ import (
 	"testing"
 )
 
-func TestFindMaxConsecutiveOnes(t *testing.T) {
+func Test_findNumbers(t *testing.T) {
 	tcs := []struct {
 		input  []int
 		output int
