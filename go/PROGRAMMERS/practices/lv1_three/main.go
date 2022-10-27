@@ -1,7 +1,5 @@
 package main
 
-import "log"
-
 // Source: https://school.programmers.co.kr/learn/courses/30/lessons/131128
 
 const (
@@ -13,10 +11,7 @@ var arr [T]int
 
 func combination(nums *[]int, numLen, s, L int) {
 	if L == T {
-		log.Println(arr)
-		log.Println((*nums)[arr[0]], (*nums)[arr[1]], (*nums)[arr[2]])
 		if (*nums)[arr[0]]+(*nums)[arr[1]]+(*nums)[arr[2]] == 0 {
-
 			count++
 		}
 		return
