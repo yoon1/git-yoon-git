@@ -14,7 +14,7 @@ func solution(want []string, number []int, discount []string) int {
 
 	var wg sync.WaitGroup
 	length := len(discount) - 9
-	passes := make(chan bool)
+	passes := make(chan bool, length)
 	for i := 0; i < length; i++ {
 		wg.Add(1)
 		go Cmp(&wg, m, discount[i:i+10], &passes)
