@@ -25,8 +25,14 @@ func ScanString() string {
 	return str
 }
 
-func ScanWords() {
+func ScanWords() (int, int, int) {
 	str := ScanString()
 	ss := strings.Split(str, " ")
-	one, two, three = ss[0], ss[1], ss[2]
+	one, two, three := ss[0], ss[1], ss[2]
+	return toInt(one), toInt(two), toInt(three)
+}
+
+func toInt(s string) int {
+	n, _ := strconv.Atoi(s)
+	return n
 }
