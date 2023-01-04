@@ -1,0 +1,5 @@
+# 문자열 포함
+# example:
+## input: wikipedia
+## output: https://en.wikipedia.org/
+wikipedia
