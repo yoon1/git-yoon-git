@@ -3,7 +3,7 @@ package main
 func duplicateZeros(arr []int) []int {
 	var length = len(arr)
 	var i int
-	for i < length {
+	for i+1 < length {
 		if arr[i] == 0 {
 			t := make([]int, i+1)
 			copy(t, arr[0:i+1])
