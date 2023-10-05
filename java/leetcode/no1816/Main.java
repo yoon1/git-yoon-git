@@ -5,18 +5,27 @@ import java.util.Arrays;
 import java.util.List;
 
 class Solution {
-    public String truncateSentence(String s, int k) {
+    public String reverseWords(String s) {
         String[] parts = s.split(" ");
-        String[] selectedParts = Arrays.copyOfRange(parts, 0, k);
 
-        return String.join(" ", selectedParts);
+        int len = parts.length;
+        StringBuilder res = new StringBuilder();
+        for (int i = 0; i < len; i++) {
+            StringBuilder sb = new StringBuilder(parts[i]);
+            String reversed = sb.reverse().toString();
+            res.append(reversed);
+            if (i != len - 1) {
+                res.append(" ");
+            }
+        }
+
+        return res.toString();
     }
 }
-
 
 class Main {
     public static void main(String[] args) {
         Solution solution = new Solution();
-        System.out.println(solution.truncateSentence("What is the solution to this problem", 4));
+        System.out.println(solution.reverseWords("Let's take LeetCode contest"));
     }
 }
