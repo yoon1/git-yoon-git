@@ -7,8 +7,8 @@ import (
 
 func Test_sortColors(t *testing.T) {
 	tcs := []struct {
-		input  int
-		aspect int64
+		input    int
+		expected int64
 	}{
 		{1, 1},
 		{2, 5},  // +4 4 (4*1) -> 1
@@ -20,7 +20,7 @@ func Test_sortColors(t *testing.T) {
 	for _, tc := range tcs {
 		t.Run("성공", func(t *testing.T) {
 			result := coloredCells(tc.input)
-			assert.Equal(t, tc.aspect, result)
+			assert.Equal(t, tc.expected, result)
 		})
 	}
 }

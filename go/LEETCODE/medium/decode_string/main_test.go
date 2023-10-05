@@ -7,8 +7,8 @@ import (
 
 func Test_sortColors(t *testing.T) {
 	tcs := []struct {
-		input  string
-		aspect string
+		input    string
+		expected string
 	}{
 		{"3[a]2[bc]", "aaabcbc"},
 		{"10[a]", "aaaaaaaaaa"},
@@ -17,7 +17,7 @@ func Test_sortColors(t *testing.T) {
 	for _, tc := range tcs {
 		t.Run("성공", func(t *testing.T) {
 			result := decodeString(tc.input)
-			assert.Equal(t, tc.aspect, result)
+			assert.Equal(t, tc.expected, result)
 		})
 	}
 }

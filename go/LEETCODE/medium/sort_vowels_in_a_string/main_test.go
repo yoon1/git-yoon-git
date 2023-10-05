@@ -7,8 +7,8 @@ import (
 
 func Test_sortVowels(t *testing.T) {
 	tcs := []struct {
-		s      string
-		aspect string
+		s        string
+		expected string
 	}{
 		{"lEetcOde", "lEOtcede"},
 		{"lYmpH", "lYmpH"},
@@ -17,7 +17,7 @@ func Test_sortVowels(t *testing.T) {
 	for _, tc := range tcs {
 		t.Run("성공", func(t *testing.T) {
 			res := sortVowels(tc.s)
-			assert.Equal(t, res, tc.aspect)
+			assert.Equal(t, res, tc.expected)
 		})
 	}
 }

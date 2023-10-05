@@ -7,8 +7,8 @@ import (
 
 func Test_sortColors(t *testing.T) {
 	tcs := []struct {
-		root   *TreeNode
-		aspect int
+		root     *TreeNode
+		expected int
 	}{
 		{
 			root: &TreeNode{
@@ -35,14 +35,14 @@ func Test_sortColors(t *testing.T) {
 					},
 				},
 			},
-			aspect: 15,
+			expected: 15,
 		},
 	}
 
 	for _, tc := range tcs {
 		t.Run("성공", func(t *testing.T) {
 			result := deepestLeavesSum(tc.root)
-			assert.Equal(t, tc.aspect, result)
+			assert.Equal(t, tc.expected, result)
 		})
 	}
 }
