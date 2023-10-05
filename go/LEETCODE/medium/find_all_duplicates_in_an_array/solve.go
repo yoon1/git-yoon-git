@@ -1,14 +1,23 @@
 package find_all_duplicates_in_an_array
 
-func findDuplicates(nums []int) (res []int) {
-	m := make(map[int]bool, len(nums))
-	for _, num := range nums {
-		if _, ok := m[num]; ok {
-			res = append(res, num)
+func findDuplicates(nums []int) []int {
+	var count []int
+
+	abs := func(x int) int {
+		if x > 0 {
+			return x
+		}
+		return -x
+	}
+
+	for i := range nums {
+		idx := abs(nums[i]) - 1
+		if nums[idx] > 0 {
+			nums[idx] *= -1
 		} else {
-			m[num] = true
+			count = append(count, abs(nums[i]))
 		}
 	}
 
-	return
+	return count
 }
