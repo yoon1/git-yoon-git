@@ -31,3 +31,14 @@ func MakeListNode(nums []int) *ListNode {
 	}
 	return head
 }
+
+func CompareListNode(a *ListNode, b *ListNode) bool {
+	for a != nil && b != nil {
+		if a.Val != b.Val {
+			return false
+		}
+		a = a.Next
+		b = b.Next
+	}
+	return a == nil && b == nil
+}
