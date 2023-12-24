@@ -7,7 +7,7 @@ import (
 
 func Test_createTree(t *testing.T) {
 	var (
-		input    = []int{1, 2, 3, 4, 5, 0, 6, 7, 0, 0, 0, 0, 8}
+		input    = []int{1, 2, 3, 4, 5, NULL, 6, 7, NULL, NULL, NULL, NULL, 8}
 		expected = &TreeNode{
 			Val: 1,
 			Left: &TreeNode{

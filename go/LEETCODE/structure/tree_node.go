@@ -20,6 +20,8 @@ func IsSameTree(p *TreeNode, q *TreeNode) bool {
 	return IsSameTree(p.Left, q.Left) && IsSameTree(p.Right, q.Right)
 }
 
+const NULL = -1
+
 func CreateTree(arr []int) *TreeNode {
 	if len(arr) == 0 {
 		return nil
@@ -36,13 +38,13 @@ func CreateTree(arr []int) *TreeNode {
 		node := queue[0]
 		queue = queue[1:]
 
-		if arr[i] != 0 {
+		if arr[i] != NULL {
 			node.Left = &TreeNode{Val: arr[i]}
 			queue = append(queue, node.Left)
 		}
 		i++
 
-		if i < len(arr) && arr[i] != 0 {
+		if i < len(arr) && arr[i] != NULL {
 			node.Right = &TreeNode{Val: arr[i]}
 			queue = append(queue, node.Right)
 		}

@@ -12,7 +12,7 @@ func Test_leafSimilar(t *testing.T) {
 		b        []int
 		expected bool
 	}{
-		{[]int{3, 5, 1, 6, 2, 9, 8, 0, 0, 7, 4}, []int{3, 5, 1, 6, 7, 4, 2, 0, 0, 0, 0, 0, 0, 9, 8}, true},
+		{[]int{3, 5, 1, 6, 2, 9, 8, NULL, NULL, 7, 4}, []int{3, 5, 1, 6, 7, 4, 2, NULL, NULL, NULL, NULL, NULL, NULL, 9, 8}, true},
 		{[]int{1, 2, 3}, []int{1, 3, 2}, false},
 	}
 
