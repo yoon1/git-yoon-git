@@ -1,16 +1,17 @@
 package main
 
 func groupThePeople(groupSizes []int) [][]int {
-	var m = make(map[int][][]int)
+	var res [][]int
+	var m = make(map[int][]int)
 
-	for _, v := range groupSizes {
-		// 만약에 length 다 차면 새로 만들어서 채워 넣음.
-		if arr, ok := m[v]; ok {
-			length := len(arr)
+	for idx, gs := range groupSizes {
+		m[gs] = append(m[gs], idx)
 
+		if len(m[gs]) == gs {
+			res = append(res, m[gs])
+			delete(m, gs)
 		}
 	}
 
-	//var res = make(map[int])
-	return m
+	return res
 }
