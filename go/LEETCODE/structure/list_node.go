@@ -1,5 +1,7 @@
 package structure
 
+import "fmt"
+
 type ListNode struct {
 	Val  int
 	Next *ListNode
@@ -41,4 +43,11 @@ func CompareListNode(a *ListNode, b *ListNode) bool {
 		b = b.Next
 	}
 	return a == nil && b == nil
+}
+
+func PrintNode(head *ListNode) {
+	for p := head; p != nil; p = p.Next {
+		fmt.Print(p.Val, " ")
+	}
+	fmt.Println()
 }
