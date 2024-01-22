@@ -23,7 +23,6 @@ func swapNode(left, right *ListNode) {
 	left.Val, right.Val = right.Val, left.Val
 }
 
-// search returns pre, right
 func searchNode(head *ListNode, k int) *ListNode {
 	var i = 1
 	for cur := head; cur != nil && i <= k; cur = cur.Next {
