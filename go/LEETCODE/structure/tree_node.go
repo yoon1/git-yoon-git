@@ -1,5 +1,10 @@
 package structure
 
+import (
+	"container/list"
+	"fmt"
+)
+
 type TreeNode struct {
 	Val   int
 	Left  *TreeNode
@@ -52,4 +57,29 @@ func CreateTree(arr []int) *TreeNode {
 	}
 
 	return root
+}
+
+func PrintTreeBFS(root *TreeNode) {
+	if root == nil {
+		fmt.Println("NULL")
+		return
+	}
+
+	queue := list.New()
+	queue.PushBack(root)
+
+	for queue.Len() > 0 {
+		levelSize := queue.Len()
+		for i := 0; i < levelSize; i++ {
+			currentNode := queue.Remove(queue.Front()).(*TreeNode)
+			if currentNode == nil {
+				fmt.Print("NULL ")
+			} else {
+				fmt.Print(currentNode.Val, " ")
+				queue.PushBack(currentNode.Left)
+				queue.PushBack(currentNode.Right)
+			}
+		}
+		fmt.Println()
+	}
 }
